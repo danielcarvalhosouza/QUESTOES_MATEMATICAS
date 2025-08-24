@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Questões Matemáticas</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="header">
+          <h1>🧮 Questões Matemáticas</h1>
+          <p>Teste seus conhecimentos em matemática</p>
+        </div>
+
+        <!-- Grid de tópicos matemáticos -->
+        <div class="topics-grid" id="topicsGrid">
+          <div class="topic-card" data-topic="fatoracao">
+            <h3>📐 Fatoração Algébrica</h3>
+            <p>Trinômio quadrado perfeito e agrupamento</p>
+            <span class="question-count">5 questões</span>
+          </div>
+
+          <div class="topic-card" data-topic="fracoes">
+            <h3>➗ Frações Algébricas</h3>
+            <p>Operações com frações algébricas</p>
+            <span class="question-count">5 questões</span>
+          </div>
+
+          <div class="topic-card" data-topic="sistemas">
+            <h3>⚖️ Sistemas de Equações</h3>
+            <p>Equações do primeiro grau</p>
+            <span class="question-count">5 questões</span>
+          </div>
+        </div>
+
+        <!-- Container do quiz -->
+        <div class="quiz-container" id="quizContainer" style="display: none">
+          <div class="quiz-header">
+            <h2 id="quizTitle">Título do Quiz</h2>
+            <div class="progress-bar">
+              <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <span class="question-counter" id="questionCounter"
+              >Questão 1 de 5</span
+            >
+          </div>
+
+          <div class="question-content">
+            <p id="questionText">Texto da questão</p>
+            <div class="options-container" id="optionsContainer">
+              <!-- Opções serão inseridas aqui -->
+            </div>
+          </div>
+
+          <div class="quiz-controls">
+            <button
+              class="btn btn-secondary"
+              id="prevBtn"
+              onclick="previousQuestion()"
+            >
+              ← Anterior
+            </button>
+            <button
+              class="btn btn-primary"
+              id="nextBtn"
+              onclick="nextQuestion()"
+            >
+              Próxima →
+            </button>
+            <button
+              class="btn btn-success"
+              id="finishBtn"
+              onclick="finishQuiz()"
+              style="display: none"
+            >
+              Finalizar
+            </button>
+          </div>
+        </div>
+
+        <!-- Container de resultados -->
+        <div
+          class="results-container"
+          id="resultsContainer"
+          style="display: none"
+        >
+          <h2>🎯 Resultados</h2>
+          <div class="score-display">
+            <div class="score-circle">
+              <span id="scorePercentage">0%</span>
+            </div>
+            <p>
+              Você acertou <span id="correctAnswers">0</span> de
+              <span id="totalQuestions">5</span> questões
+            </p>
+          </div>
+
+          <div class="topic-results" id="topicResults">
+            <!-- Resultados por tópico serão inseridos aqui -->
+          </div>
+
+          <button class="btn btn-primary" onclick="restartQuiz()">
+            🔄 Tentar Novamente
+          </button>
+          <button class="btn btn-secondary" onclick="backToTopics()">
+            ← Voltar aos Tópicos
+          </button>
+        </div>
+      </div>
+
+      <div class="footer">
+        <p>Desenvolvido com ❤️ para o aprendizado de matemática</p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
